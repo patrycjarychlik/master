@@ -1,0 +1,50 @@
+﻿@page
+@model AppSec.Pages.PersonalModel
+
+<section>
+    <div class="col-xs-8">
+        <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+        </p>
+        <div class="jumbotron">
+            <h2>Znajdź wymarzoną restaurację</h2>
+            <p>Twoja baza restauracji z całego świata. To ty wybierasz gdzie zjesz</p>
+        </div>
+    </div>
+    <div class="jumbotron col-xs-4">
+        <h4>Nie znalazłeś ulubionej restauracji?</h4>
+        <p>...</p>
+        <p> <a asp-action="Create"><span class="btn btn-primary btn-lg" href="#" role="button">Dodaj restaurację</span></a></p>
+    </div>
+</section>
+
+<div class="container">
+
+    <div class="col-xs-9">
+
+        @foreach (var restaurant in @Model.Restaurants) {
+            @Html.Partial("_Summary", restaurant)
+        }
+
+    </div>
+
+    <div class="col-xs-3" id="sidebar">
+        <form method="POST">
+            
+         
+            <div class="list-group">
+                @foreach (var cuisine in @Model.Cuisines) {
+
+                    <div><input asp-for="CurrentCuisine" />@Model</div>
+
+                    @Html.Partial("_Cuisines", cuisine)
+                    <button type="submit">Save</button>
+                }
+
+</form>
+
+                <a href="#" class="list-group-item">Link</a>
+
+            </div>
+    </div>
+</div>

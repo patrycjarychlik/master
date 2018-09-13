@@ -1,0 +1,23 @@
+﻿@model Restaurant
+
+
+<div class="col-xs-6 col-lg-4">
+    <h2>@Model.Name</h2>
+    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+    <p>
+        <a asp-action="Details" asp-route-id="@Model.Id">
+            <span class="btn btn-default" href="#" role="button">View details &raquo;</span>
+        </a>
+    </p>
+    <div>
+        Kuchnia: @Model.Cuisine
+    </div>
+    <div>
+
+        <a asp-page="/Restaurants/Edit" asp-route-id="@Model.Id">
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-penci" aria-hidden="true"></span> zmień
+            </button>
+        </a>
+    </div>
+</div>
