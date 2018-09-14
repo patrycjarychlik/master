@@ -29,6 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Update="Views\Shared\_HeaderNavBar.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
     <Content Update="Views\Shared\_Cuisines.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

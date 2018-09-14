@@ -54,6 +54,7 @@ namespace AppSec {
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddTransient<IRestaurantData, SqlRestaurantData>();
+            services.AddTransient<IReviewData, SqlReviewData>();
 
       
         }

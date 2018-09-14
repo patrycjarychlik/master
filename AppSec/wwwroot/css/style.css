@@ -1,0 +1,122 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i&subset=latin-ext');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.jumbotron {
+    font-weight: 200;
+    color: #f87089;
+}
+    .jumbotron h2 {
+        font-family: 'Playfair Display', serif;
+        color: black;
+    }
+
+    .jumbotron h4 {
+        font-family: 'Roboto', serif;
+        font-weight: 200;
+        color: black;
+    }
+
+.jumboBrowse {
+    min-height: 235px;
+}
+
+.center{
+    text-align: center;
+}
+
+nav {
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 22px;
+}
+
+.navbar-inverse {
+    background-color: #151515 !important;
+}
+
+
+/*______________________*BUTTONS_________________________*/
+
+.box {
+    margin: 1rem;
+    width: 18.75rem;
+}
+
+    .box img {
+        width: 100%;
+    }
+
+.btnWide {
+    border: none;
+    color: white;
+    overflow: hidden;
+    margin: 1rem;
+    padding: 0;
+    text-transform: uppercase;
+    width: 150px;
+    height: 40px;
+}
+
+    .btn.color-1 {
+        background-color: #426FC5;
+    }
+
+    .btn.color-2 {
+        background-color: #00897b;
+    }
+
+    .btn.color-3 {
+        background-color: #f6774f;
+    }
+
+    .btn.color-4 {
+        background-color: #f87089;
+    }
+
+.btn-border.color-1 {
+    background-color: transparent;
+    border: 2px solid #426FC5;
+    color: #426FC5;
+}
+
+.btn-border.color-2 {
+    background-color: transparent;
+    border: 2px solid #00897b;
+    color: #00897b;
+}
+
+.btn-border.color-3 {
+    background-color: transparent;
+    border: 2px solid #f6774f;
+    color: #f6774f;
+}
+
+.btn-border.color-4 {
+    background-color: transparent;
+    border: 2px solid #f87089;
+    color: #f87089;
+}
+
+.material-design {
+    position: relative;
+}
+
+
+.btn:hover{
+    opacity: 0.65;
+}
+
+

@@ -1,19 +1,25 @@
 ﻿@page
 @model AppSec.Pages.ReviewPageModel
 @{
-    ViewData["Title"] = "ReviewPage";
+    ViewData["Title"] = "Twoje Recenzje";
 }
 
-<h2>ReviewPage</h2>
 
-div class="container">
+<div class="jumbotron">
+    <div class="container">
+        <h2>Twoje Recenzje</h2>
+        <h6>Oceniaj swoje ulubione restauracje z całego świata</h6>
+    </div>
+</div>
 
-<div class="col-xs-12">
+<div id="n" class="container">
+    <div class="col-xs-12">
 
-    @foreach (var review in @Model.Reviews) {
-    @Html.Partial("_ReviewPart", review)
+        @foreach (var review in @Model.Reviews) {
+            @Html.Partial("_ReviewPart", review)
         }
 
+    </div>
 </div>
 
 

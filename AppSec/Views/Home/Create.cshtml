@@ -1,25 +1,38 @@
 ﻿@using OdeToFood.Models
 @model Restaurant
 
-@{ 
+@{
     ViewBag.Title = "Create";
 }
-<h1>Create</h1>
 
-<form method="post">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/partial.css" asp-append-version="true" />
+@{
+    Html.RenderPartial("_HeaderNavBar");
+}
+<div id="create">
+    <h1>Create</h1>
+    <div class="container ">
 
-    <div>  
-        <label asp-for="Name"></label>
-        <input asp-for="Name" />
-        <span asp-validation-for="Name"></span>
+        <form method="post">
+
+            <div>
+                <label asp-for="Name"></label>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+
+            <div>
+                <label asp-for="Cuisine"></label>
+                <select asp-for="Cuisine"
+                        asp-items="@Html.GetEnumSelectList<CuisineType>()"></select>
+                <span asp-validation-for="Cuisine"></span>
+            </div>
+
+            <input type="submit" name="save" value="Save" />
+        </form>
+
     </div>
-    
-    <div>
-        <label asp-for="Cuisine"></label>
-        <select asp-for="Cuisine"
-                asp-items="@Html.GetEnumSelectList<CuisineType>()"></select>
-        <span asp-validation-for="Cuisine"></span>
-    </div>
-
-    <input type="submit" name="save" value="Save" />
-</form>
+</div>
