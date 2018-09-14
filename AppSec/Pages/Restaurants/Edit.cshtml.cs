@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using OdeToFood.Services;
 using OdeToFood.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace AppSec.Pages.Restaurants
 {
@@ -35,6 +36,8 @@ namespace AppSec.Pages.Restaurants
 
         public IActionResult OnPost()
         {
+            Restaurant.UserId= User.FindFirst(ClaimTypes.NameIdentifier).Value ;
+
             if (ModelState.IsValid)
             {
                 _restaurantData.Update(Restaurant);

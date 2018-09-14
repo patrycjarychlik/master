@@ -9,7 +9,7 @@ namespace AppSec.Pages {
         public string Message { get; set; }
 
         public void OnGet() {
-            Message = "Your contact page.";
+            Message = "Cieszymy się, że nami jesteś.";
         }
     }
 }

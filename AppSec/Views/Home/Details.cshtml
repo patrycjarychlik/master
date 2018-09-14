@@ -1,15 +1,45 @@
 ﻿@model Restaurant
 
-@{ 
+@{
     ViewBag.Title = Model.Name;
 }
 
-<h1>@Model.Name</h1>
-<div>
-    Id: @Model.Id
-</div>
-<div>
-    Cuisine: @Model.Cuisine
-</div>
 
-<a asp-action="Index" asp-controller="Home">Home</a>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/partial.css" asp-append-version="true" />
+@{
+    Html.RenderPartial("_HeaderNavBar");
+}
+
+    <div class="container  outer ">
+        <div class="container middle ">
+            <br /><br /><br />
+            <div class="inner full">
+                <h1>@Model.Name</h1>
+                <div class="jumbotron col-xs-4 jumboBrowse inner full
+                             ">
+                    <h6>Restauracja: @Model.Name</h6>
+                    <p>
+
+
+                        <div>
+                            @*Id: @Model.Id*@
+                        </div>
+                        <div>
+                            <b> Rodzaj serwowanej kuchni:</b> @Model.Cuisine
+                        </div>
+                        <br />
+
+
+                        <div class="opis">
+                            W restauracji dania przygotowywane są na indywidualne zamówienie, produkowane głównie z surowców (rzadziej z półproduktów i gotowych potraw). Asortyment uzupełniają napoje zimne i gorące, alkohole, wyroby cukiernicze i towary handlowe (papierosy, słodycze itp.). Restauracje często mają odpowiedni do charakteru obiektu wystrój wnętrz i specjalizację w rodzaju kuchni (regionalna, narodowa). Ponadto restauracje świadczą usługi rozrywkowe (np. dancingi), dodatkowe (np. catering), przygotowane są do organizowania przyjęć okolicznościowych i obsługi grup.
+                        </div>
+                        <br />
+                        <a asp-action="Index" asp-controller="Home">Powrót</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>

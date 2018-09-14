@@ -6,19 +6,55 @@ body {
     background-image: url(../images/create.jpeg);
 }
 
-#create {
-    width: 100%;
-    height: 100%;
+.create form label {
     line-height: 30px;
-    font-weight:300;
+    font-weight:300; !important;
 }
 
+.middle {
+    display: table-cell;
+    vertical-align: top;
+    margin-top: 200px;
+  
+}
 
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    width: 300px;
+}
 
+.full {
+    width: 600px; !important;
+}
 
-/*______________________*BUTTONS_________________________*/
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
 
-.box {
+.opis{
+    color: black;
+    text-align: justify;
+}
+
+.demo {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+}
+    /*______________________*BUTTONS_________________________*/
+    .box {
     margin: 1rem;
     width: 18.75rem;
 }

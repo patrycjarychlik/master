@@ -3,24 +3,43 @@
 
 @model EditModel
 
-<h1>Edit @Model.Restaurant.Name</h1>
+<link rel="stylesheet" href="~/css/partial.css" asp-append-version="true" />
 
-<form method="post">
+<div class="demo">
+<div class="container outer ">
+    <div class="container middle">
+        <br /><br />
+        <br /><br />
 
-    <input type="hidden" asp-for="Restaurant.Id" />
+        <div class="inner full">
+            <h1>Edycja @Model.Restaurant.Name</h1>
+            <div class="jumbotron col-xs-4 jumboBrowse inner full create">
+                <h4>Edytuj restaurację</h4>
+                <p>
+                    <form method="post">
 
-    <div>
-        <label asp-for="Restaurant.Name"></label>
-        <input asp-for="Restaurant.Name" />
-        <span asp-validation-for="Restaurant.Name"></span>
+                        <input type="hidden" asp-for="Restaurant.Id" />
+
+                        <div>
+                            <label asp-for="Restaurant.Name">Nazwa lokalu:</label>
+                            <input asp-for="Restaurant.Name" />
+                            <span asp-validation-for="Restaurant.Name"></span>
+                        </div>
+
+                        <div>
+                            <label asp-for="Restaurant.Cuisine">Rodzaj serwowanych potraw:</label>
+                            <select asp-for="Restaurant.Cuisine"
+                                    asp-items="@Html.GetEnumSelectList<OdeToFood.Models.CuisineType>()"></select>
+                            <span asp-validation-for="Restaurant.Cuisine"></span>
+                        </div>
+
+                        <input type="submit" name="save" value="Save"  class=" btn btnWide btn-border color-4 material-design" />
+                    </form>
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
     </div>
 
-    <div>
-        <label asp-for="Restaurant.Cuisine"></label>
-        <select asp-for="Restaurant.Cuisine"
-                asp-items="@Html.GetEnumSelectList<OdeToFood.Models.CuisineType>()"></select>
-        <span asp-validation-for="Restaurant.Cuisine"></span>
-    </div>
-
-    <input type="submit" name="save" value="Save" />
-</form>

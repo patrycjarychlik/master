@@ -1,19 +1,22 @@
 ﻿@page
 @model ContactModel
 @{
-    ViewData["Title"] = "Contact";
+    ViewData["Title"] = "Skontaktuj się z nami.";
 }
-<h2>@ViewData["Title"]</h2>
+<link rel="stylesheet" href="~/css/contact.css" asp-append-version="true" />
+<div class="panel panel-danger">
+<h1>@ViewData["Title"]</h1>
 <h3>@Model.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+    <address>
+        Patrycja Rychlik<br />
+        Warszawa, WA 98052-6399<br />
+        <abbr title="Phone">P:</abbr>
+        425.555.562
+    </address>
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    <address>
+        <strong>Wsparcie:</strong> <a href="mailto:Support@example.com">foodie@gmail.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">foodie.marketing@gmail.com</a>
+    </address>
+</div>

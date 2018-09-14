@@ -5,20 +5,22 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+ h2, h1 {
+    font-family: 'Playfair Display', serif;
+    color: black;
+}
+
+ h4 {
+    font-family: 'Roboto', serif;
+    font-weight: 200;
+    color: black;
+}
+
 .jumbotron {
     font-weight: 200;
     color: #f87089;
 }
-    .jumbotron h2 {
-        font-family: 'Playfair Display', serif;
-        color: black;
-    }
 
-    .jumbotron h4 {
-        font-family: 'Roboto', serif;
-        font-weight: 200;
-        color: black;
-    }
 
 .jumboBrowse {
     min-height: 235px;
@@ -45,6 +47,12 @@ nav {
 
 .navbar-inverse {
     background-color: #151515 !important;
+}
+
+
+.review-image {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(../images/review.jpg);
 }
 
 
