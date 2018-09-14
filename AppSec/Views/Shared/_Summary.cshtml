@@ -8,16 +8,16 @@
         <a asp-action="Details" asp-route-id="@Model.Id">
             <span class="btn btn-default" href="#" role="button">zobacz &raquo;</span>
         </a>
+        <a asp-page="/Restaurants/Edit" asp-route-id="@Model.Id">
+            <button type="button" class="btn btn-default" style="float:right;">
+                <span class="glyphicon glyphicon-penci" aria-hidden="true"></span> edycja
+            </button>
+        </a>
     </p>
     <div>
         Kuchnia: @Model.Cuisine
     </div>
     <div>
 
-        <a asp-page="/Restaurants/Edit" asp-route-id="@Model.Id">
-            <button type="button" class="btn btn-default">
-                <span class="glyphicon glyphicon-penci" aria-hidden="true"></span> edycja
-            </button>
-        </a>
     </div>
 </div>

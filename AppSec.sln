@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSec", "AppSec\AppSec.csproj", "{C2FA7472-5F77-4BC9-A051-1B779D43D2D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppSec", "AppSec\AppSec.csproj", "{C2FA7472-5F77-4BC9-A051-1B779D43D2D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WcfService\WcfService.csproj", "{CFD9F733-B152-4149-BFE1-F01A96F7C300}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C2FA7472-5F77-4BC9-A051-1B779D43D2D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2FA7472-5F77-4BC9-A051-1B779D43D2D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2FA7472-5F77-4BC9-A051-1B779D43D2D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFD9F733-B152-4149-BFE1-F01A96F7C300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD9F733-B152-4149-BFE1-F01A96F7C300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD9F733-B152-4149-BFE1-F01A96F7C300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD9F733-B152-4149-BFE1-F01A96F7C300}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
