@@ -1,8 +1,10 @@
 ﻿using OdeToFood.Models;
+using OdeToFood.ViewModels;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OdeToFood.Models {
+
     public class Review {
 
         [Key]
@@ -15,6 +17,7 @@ namespace OdeToFood.Models {
         public string UserId { get; set; }
         public string ReviewId { get; set; }
         public string restaurantId { get; set; }
-        public int Stars { get; set; }
-    }
+        public int Stars{ get; set; }
+
+}
 }

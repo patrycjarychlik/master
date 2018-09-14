@@ -1,8 +1,8 @@
 ﻿@using OdeToFood.Models
-@model Restaurant
+@model ReviewEditModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create Review";
 }
 
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -12,34 +12,37 @@
 @{
     Html.RenderPartial("_HeaderNavBar");
 }
-<div class="container  outer ">
-    <div class="container middle ">
-        <br /><br /><br />
-        <div class="inner">
-            <h1>Create</h1>
-            <div class="jumbotron col-xs-4 jumboBrowse inner create">
-                <h6>Dodaj restauracę</h6>
-                <p>
+<form method="post">
+    <div class="container  outer ">
+        <div class="container middle ">
+            <br /><br /><br />
+            <div class="inner full">
+                <br /><br /><br /><br>
+                <h1>Recenzja</h1>
+                <div class="jumbotron col-xs-4  inner full create review">
+                    <input type="submit" name="save" value="Save" class=" btn btnWide btn-border color-4 material-design" style="float:right;" />
+                    <h3>Dodaj recenzję</h3>
+                    <fieldset>
+                        <span class="star-cb-group">
+                            <input asp-for="Five" type="radio" id="rating-5" value="5" /><label for="rating-5">5</label>
+                            <input asp-for="Four" type="radio" id="rating-4" value="4" /><label for="rating-4">4</label>
+                            <input asp-for="Three" type="radio" id="rating-3" value="3" /><label for="rating-3">3</label>
+                            <input asp-for="Two" type="radio" id="rating-2" value="2" /><label for="rating-2">2</label>
+                            <input asp-for="One" type="radio" id="rating-1" value="1" /><label for="rating-1">1</label>
+                            <input asp-for="Zero" type="radio" id="rating-0" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
+                        </span>
+                    </fieldset>
+                    @Html.DropDownList("Restaurant")
+                    <div>
+                        <label asp-for="Name"> Nazwa: </label>
+                        <input asp-for="Name" />
+                        <span asp-validation-for="Name"></span>
+                    </div>
+                    <br />
 
-                    <form method="post">
-
-                        <div>
-                            <label asp-for="Name"></label>
-                            <input asp-for="Name" />
-                            <span asp-validation-for="Name"></span>
-                        </div>
-
-                        <div>
-                            <label asp-for="Cuisine"></label>
-                            <select asp-for="Cuisine"
-                                    asp-items="@Html.GetEnumSelectList<CuisineType>()"></select>
-                            <span asp-validation-for="Cuisine"></span>
-                        </div>
-
-                        <input type="submit" name="save" value="Save" class=" btn btnWide btn-border color-4 material-design" />
-                    </form>
-                </p>
+                    <textarea asp-for="Text"></textarea>
+                </div>
             </div>
         </div>
-</div>
-</div>
+    </div>
+</form>

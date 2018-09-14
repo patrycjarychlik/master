@@ -16,9 +16,9 @@
     <div class="container middle ">
         <br /><br /><br />
         <div class="inner">
-            <h1>Create</h1>
-            <div class="jumbotron col-xs-4 jumboBrowse inner create">
-                <h6>Dodaj restauracę</h6>
+            <h1>Dodaj restauracę</h1>
+            <div class="jumbotron col-xs-4 jumboBrowse inner create full review">
+                <h4>Wypełnij dane lokalu</h4>
                 <p>
 
                     <form method="post">
@@ -28,6 +28,8 @@
                             <input asp-for="Name" />
                             <span asp-validation-for="Name"></span>
                         </div>
+
+                        <textarea asp-for="Description"></textarea>
 
                         <div>
                             <label asp-for="Cuisine"></label>

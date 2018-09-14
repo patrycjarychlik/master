@@ -4,7 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using OdeToFood.Models;
 using OdeToFood.Services;
 using OdeToFood.ViewModels;
+using System;
+using System.Collections.Generic;
 using System.Security.Claims;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace OdeToFood.Controllers
 {
@@ -12,9 +16,11 @@ namespace OdeToFood.Controllers
     public class HomeController : Controller
     {
         private IRestaurantData _restaurantData;
+        private IReviewData _reviewData;
 
-        public HomeController(IRestaurantData restaurantData)
+        public HomeController(IRestaurantData restaurantData, IReviewData reviewData)
         {
+            _reviewData = reviewData;
             _restaurantData = restaurantData;
 
         }
@@ -49,6 +55,16 @@ namespace OdeToFood.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult CreateReview() {
+            ViewData["Restaurant"] = _restaurantData.GetAll().Select(n => new SelectListItem {
+           Value = n.Id.ToString(),
+           Text = n.Name
+       }).ToList();
+            return View();
+        }
+
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -58,6 +74,7 @@ namespace OdeToFood.Controllers
             {
                 var newRestaurant = new Restaurant();
                 newRestaurant.Name = model.Name;
+                newRestaurant.Description = model.Description;
                 newRestaurant.Cuisine = model.Cuisine;
                 newRestaurant.UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
 
@@ -69,6 +86,42 @@ namespace OdeToFood.Controllers
             {
                 return View();
             }
+        }
+
+
+        [HttpPost]
+        public IActionResult CreateReview(ReviewEditModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                int stars = 0;
+                stars = Star(stars, model.One);
+                stars = Star(stars, model.Two);
+                stars = Star(stars, model.Three);
+                stars = Star(stars, model.Four);
+                stars = Star(stars, model.Five);
+
+                var newReview = new Review();
+                newReview.Name = model.Name;
+                newReview.Text = model.Text;
+                newReview.UserId = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+                newReview.Stars = stars;
+                newReview.restaurantId = model.Restaurant;
+                newReview = _reviewData.Add(newReview);
+
+                return RedirectToPage("/Shared/ReviewPage");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        private int Star(int stars, String radio) {
+            if (radio != null) {
+                stars = +Convert.ToInt32(radio);
+            }
+            return stars;
         }
     }
 }

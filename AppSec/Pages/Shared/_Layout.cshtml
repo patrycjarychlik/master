@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>@ViewData["Title"] - AppSec</title>
 
     <environment include="Development">
@@ -15,7 +16,7 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
-        <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
 </head>
 <body>
     @{
@@ -26,6 +27,7 @@
 
     <div class="container body-content">
         @RenderBody()
+        <br />
         <hr />
         <footer class="footer">
             <p>&copy; 2018 - Foodie   -    Patrycja Rychlik-Widera</p>
